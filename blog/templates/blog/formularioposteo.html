@@ -1,0 +1,40 @@
+{% extends "blog/index.html" %}
+{% load static %}
+
+{% block ContenidoCambiante %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario para publicar entradas al blog</title>
+</head>
+<body>
+    
+<h1> Registro de Publicaciones</h1>
+
+<p>Título de la Publicación<input type= "text" name="titulo"</p>
+
+<p>Texto de la Publicación: <input type= "text" name="texto"</p>
+
+<form action=" {% url 'guardarpublicacion' %}" method="POST"> {% csrf_token %}
+
+    {% if mensaje %}
+
+    <div class="alert alert-success" role="alert">
+        Publicación realizada con éxito
+      </div>
+
+    {% endif %}
+
+    <button type="submit" class="btn btn-primary">Guardar</button>
+
+
+
+</form>
+
+</body>
+</html>
+{% endblock %}

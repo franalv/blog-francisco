@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resultado de busqueda</title>
+</head>
+<body>
+    
+<p>Estas buscando: <strong>{{query}}</strong></p>
+
+{% if Busqueda %}
+
+<p> Artículos encontrados: {{busqueda|length}} publicaciones</p>
+
+<ul>
+    {% for busqueda in publicaciones %}
+
+    <li>
+    {{busqueda.nombre}}
+
+</li>
+{% endfor %}
+</ul>
+
+{% else %}
+
+<p> No está el posteo buscado</p>
+
+{% endif %}
+
+</body>
+</html>

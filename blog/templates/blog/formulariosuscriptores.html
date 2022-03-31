@@ -1,0 +1,31 @@
+{% extends "blog/index.html" %}
+{% load static %}
+
+{% block ContenidoCambiante %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario para Suscribirse al Blog </title>
+</head>
+<body>
+    
+<form action="/suscribirse/" method="POST"> {% csrf_token %}
+
+<p>Nombre: <input type= "text" name="nombre"</p>
+
+<p>Apellido: <input type= "text" name="apellido"</p>
+
+<p>Email: <input type= "text" name="Mail"</p>
+
+<input type= "submit" value="Solicitar Suscripción">
+
+</form>
+
+</body>
+</html>
+
+{% endblock %}
